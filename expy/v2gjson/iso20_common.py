@@ -1172,20 +1172,22 @@ def SignaturePropertiesType(SignatureProperty:dict[str, Any], *, Id:str|None=Non
         j["Id"] = {"characters": [ord(c) for c in Id], "charactersLen": len(Id)}
     return j
 
-def exiFragment(*, AbsolutePriceSchedule:dict[str, Any]|None=None, CertificateInstallationReq:dict[str, Any]|None=None, MeteringConfirmationReq:dict[str, Any]|None=None, PnC_AReqAuthorizationMode:dict[str, Any]|None=None, SignedInfo:dict[str, Any]|None=None, SignedInstallationData:dict[str, Any]|None=None)->dict[str, Any]:
+def exiFragment(*, AbsolutePriceSchedule:dict[str, Any]|None=None, OEMProvisioningCertificateChain:dict[str, Any]|None=None, PnC_AReqAuthorizationMode:dict[str, Any]|None=None, PriceLevelSchedule:dict[str, Any]|None=None, SignedInfo:dict[str, Any]|None=None, SignedInstallationData:dict[str, Any]|None=None, SignedMeteringData:dict[str, Any]|None=None)->dict[str, Any]:
     j:dict[str, Any] = {}
     if AbsolutePriceSchedule is not None:
         j["AbsolutePriceSchedule"] = AbsolutePriceSchedule
-    if CertificateInstallationReq is not None:
-        j["CertificateInstallationReq"] = CertificateInstallationReq
-    if MeteringConfirmationReq is not None:
-        j["MeteringConfirmationReq"] = MeteringConfirmationReq
+    if OEMProvisioningCertificateChain is not None:
+        j["OEMProvisioningCertificateChain"] = OEMProvisioningCertificateChain
     if PnC_AReqAuthorizationMode is not None:
         j["PnC_AReqAuthorizationMode"] = PnC_AReqAuthorizationMode
+    if PriceLevelSchedule is not None:
+        j["PriceLevelSchedule"] = PriceLevelSchedule
     if SignedInfo is not None:
         j["SignedInfo"] = SignedInfo
     if SignedInstallationData is not None:
         j["SignedInstallationData"] = SignedInstallationData
+    if SignedMeteringData is not None:
+        j["SignedMeteringData"] = SignedMeteringData
     return j
 
 def xmldsigFragment(*, CanonicalizationMethod:dict[str, Any]|None=None, DSAKeyValue:dict[str, Any]|None=None, DigestMethod:dict[str, Any]|None=None, KeyInfo:dict[str, Any]|None=None, KeyValue:dict[str, Any]|None=None, Manifest:dict[str, Any]|None=None, Object:dict[str, Any]|None=None, PGPData:dict[str, Any]|None=None, RSAKeyValue:dict[str, Any]|None=None, Reference:dict[str, Any]|None=None, RetrievalMethod:dict[str, Any]|None=None, SPKIData:dict[str, Any]|None=None, Signature:dict[str, Any]|None=None, SignatureMethod:dict[str, Any]|None=None, SignatureProperties:dict[str, Any]|None=None, SignatureProperty:dict[str, Any]|None=None, SignatureValue:dict[str, Any]|None=None, SignedInfo:dict[str, Any]|None=None, Transform:dict[str, Any]|None=None, Transforms:dict[str, Any]|None=None, X509Data:dict[str, Any]|None=None, X509IssuerSerial:dict[str, Any]|None=None)->dict[str, Any]:
